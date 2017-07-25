@@ -18,9 +18,11 @@ $settings = require __DIR__ . '/../src/settings.php';
 $app = new \Slim\App($settings);
 
 $app->add(new \Slim\Middleware\HttpBasicAuthentication([
-    "users" => [
-        "root" => "123456",
-        "muri" => "123456"
+    'path' => ['/api', '/admin'],
+    'realm' => 'Protected',
+    'users' => [
+        'root' => 'root',
+        'muri' => 'muri'
     ]
 ]));
 

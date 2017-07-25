@@ -9,7 +9,7 @@ $app->get('/home', function ($request, $response, $args) {
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
-$app->get('/employee', function ($request, $response, $args) {
+$app->get('/api/employee', function ($request, $response, $args) {
 	$this->logger->info("lado-api '/' tes query employee");
     $sth = $this->db->prepare("SELECT * FROM employee");
     $sth->execute();
